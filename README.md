@@ -6,7 +6,7 @@ I don't know how it can be implemented; all I know is that I want to push the co
 
 Anyway, you'll get two files:
   1) Calendar, Day Finder, Day Quizzer (Doomsday Algorithm)
-  2) Game of Life (made this at a night of Jan or Feb 2024)
+  2) Game of Life (made this on a night of Jan or Feb 2024)
 
 Special features:
   1) In Doomsday Alg, you may enter any year you wish. You will get your Gregorian calendar for that year.
