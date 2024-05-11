@@ -9,7 +9,7 @@ Anyway, you'll get two files:
   2) Game of Life (made this on a night of Jan or Feb 2024)
 
 Special features:
-  1) In Doomsday Alg, you may enter any year you wish. You will get your Gregorian calendar for that year.
-  2) In the Game of Life, delays and '\f' have been used. Again, I want to state: that you can update the code.
+  1) In **Doomsday Alg**, you may enter any year you wish. You will get your Gregorian calendar for that year.
+  2) In the **Game of Life**, delays and '\f' have been used. Again, I want to state: that you can update the code.
 
 Both of these have been implemented for BlueJ, so you may request to change the code for seamless execution universally.
