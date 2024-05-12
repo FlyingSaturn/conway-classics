@@ -26,6 +26,7 @@
         obj.year = obj.year1;
         System.out.println('\f'); // For clearing the screeen; change it as you wish
         obj.weekd = obj.answer(obj.day, obj.month, obj.year); // Just finding the week day of Jan 1 of that year
+        obj.isLeapYear = obj.LEAAP(obj.year);
         obj.P();
     }
 
