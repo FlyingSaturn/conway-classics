@@ -1,3 +1,5 @@
+# Conway Classics
+
 With help from various videos on YouTube for the rules, over the past 4 years, I've implemented two famous algorithms of the mathematician Mr Conway.
 
 I may add stuff soon, but I am still learning GitHub. 
