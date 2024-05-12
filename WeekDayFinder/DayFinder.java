@@ -81,7 +81,6 @@ class DayFinder
         int weekd = 0;
         long century = 0;
         long year = year1;
-        boolean isLeapYear = false;
         if (year < 0)
             year += 1;
         century = (long) (year / 100);
@@ -89,7 +88,6 @@ class DayFinder
         ccode = (centuryc == 0) ? 2 : (centuryc == 1) ? 0 : (centuryc == 2) ? 5 : 3;
         ddigit = (int) (year % 100);
         isLeapYear = LEAAP(year);
-
         a = (int) (ddigit / 12);
         b = ddigit % 12;
         c = (int) (b / 4);
