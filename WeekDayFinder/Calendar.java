@@ -7,8 +7,6 @@
  import java.util.*;
  class Calendar extends DayFinder
  {
-    // int date[] [] = {{31, 31, 3, 4}, {28, 29, 28, 29}, {31, 31, 14, 14}, {30, 30, 4, 4}, {31, 31, 9, 9}, {30, 30, 6, 6}, {31, 31, 11, 11}, {31, 31, 8, 8}, {30, 30, 5, 5}, {31, 31, 10, 10}, {30, 30, 7, 7},{31, 31, 12, 12}};
-    // String mon[] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
     int weekd = 0, month = 1, day = 1;
     long year1 = 0, year = 0;
     boolean isLeapYear = false;  
