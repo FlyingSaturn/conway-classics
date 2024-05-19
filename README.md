@@ -18,6 +18,6 @@ Both of these have been implemented for BlueJ, so you may request to change the 
 
 ## What you need to change
 
-Make it CLI-suited. For example, as I was saying, '\f' should be replaced with '\b' or something else, which is suitable for CLI universally. The reason I'm not doing this is that it will make the program very less efficient. 
+Try to make it CLI-suited. For example, as I was saying, '\f' should be replaced with '\b' or something else, which is suitable for CLI universally. The reason I'm not doing this is that it will make the program very less efficient. 
 
 The Java Classes in question: Calendar, GameOfLife
