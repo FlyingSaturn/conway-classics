@@ -2,10 +2,19 @@ class gameoflife
 {
     String A[][] = new String[15][15];
     String B[][] = new String[15][15]; // you can choose the subscript of your choice
+
+    // main() method
+    public static void main(String args[]) throws InterruptedException
+    {
+        gameoflife obj = new gameoflife();
+        obj.initialize();
+        obj.display();
+    }
+
     // To initialize and to show the starting screen
     void initialize() throws InterruptedException
     {
-        System.out.print('\f'); // clearing the screen
+        clearScreen(); // clearing the screen
         for (int i = 0; i < A.length; i++)
         {
             for (int j = 0; j < A[0].length; j++)
@@ -28,7 +37,7 @@ class gameoflife
         Thread.sleep(1000);
     }
     
-		 // Clears the screen
+		 // Clears the screen; taken from ChatGPT
     public void clearScreen() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
@@ -90,7 +99,7 @@ class gameoflife
         }
         do
         {
-            System.out.print('\f');
+            clearScreen();
             change = false;
             for (int i = 0; i < A.length; i++)
             {
@@ -111,12 +120,5 @@ class gameoflife
             }          
             Thread.sleep(105); // 105 ms
         } while(change); // if the last step is the same as the current step, then the code will end
-    }
-    // main() method
-    public static void main(String args[]) throws InterruptedException
-    {
-        gameoflife obj = new gameoflife();
-        obj.initialize();
-        obj.display();
     }
 }
