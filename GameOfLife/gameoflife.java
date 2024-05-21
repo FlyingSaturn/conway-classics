@@ -1,12 +1,25 @@
-class gameoflife
+import java.util.*;
+public class gameoflife // you may need to omit the public keyword while executing in your IDE
 {
-    String A[][] = new String[15][15];
-    String B[][] = new String[15][15]; // you can choose the subscript of your choice
-
+    String A[][];
+    String B[][];
+    static final String BLACK = "\u2b1b ";
+    static final String WHITE = "\u2b1c ";
+    gameoflife(int n)
+    {
+        A = new String[n][n];
+        B = new String[n][n];
+    }
+    
     // main() method
     public static void main(String args[]) throws InterruptedException
     {
-        gameoflife obj = new gameoflife();
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the maximum no. of blocks\nyou want to fit in one line\nof the terminal window: ");
+        int n = sc.nextInt(); // input may vary based 
+        sc.close();
+        gameoflife obj = new gameoflife(n);
+        obj.clearScreen();
         obj.initialize();
         obj.display();
     }
@@ -15,14 +28,18 @@ class gameoflife
     void initialize() throws InterruptedException
     {
         clearScreen(); // clearing the screen
+        double randomizer = 0.5 / ((2 / 3.0) / 15 * A.length); // 2/3 = 0.6666...
+             // For subscript 15, 0.75 * the pseudorandom number had to yield 
+             // something greater than or equals 0.5 to be rounded off as 1.
+             // Something above 66.666th percentile on the number line...
         for (int i = 0; i < A.length; i++)
         {
             for (int j = 0; j < A[0].length; j++)
             {
-                if (Math.round(Math.random() * .75) == 1) // .75 was just an arbitrary number to empty the space a bit
-                    A[i][j] = "⬛";
+                if (Math.round(Math.random() * randomizer) == 1) // .75 was just an arbitrary number to empty the space a bit
+                    A[i][j] = BLACK;
                 else
-                    A[i][j] = "⬜";
+                    A[i][j] = WHITE;
                 System.out.print(A[i][j] + " ");
             }
             System.out.println();
@@ -38,7 +55,8 @@ class gameoflife
     }
     
 		 // Clears the screen; taken from ChatGPT
-    public void clearScreen() {
+    void clearScreen() 
+    {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
@@ -67,7 +85,7 @@ class gameoflife
     // is the specific block even alive in the first place?
     boolean isAlive(int i, int j)
     {
-        if (A[i][j].equals("⬛"))
+        if (A[i][j].equals(BLACK))
             return true;
         return false;
     }
@@ -76,14 +94,14 @@ class gameoflife
     {
         boolean wasThisNeeded = false;
         boolean breed = breedable(ides, jdes);
-        if (!breed && A[ides][jdes].equals("⬛"))
+        if (!breed && A[ides][jdes].equals(BLACK))
         {    
-            B[ides][jdes] = "⬜";
+            B[ides][jdes] = WHITE;
             wasThisNeeded = true;
         }
-        else if (breed && A[ides][jdes].equals("⬜"))
+        else if (breed && A[ides][jdes].equals(WHITE))
         {
-            B[ides][jdes] = "⬛";
+            B[ides][jdes] = BLACK;
             wasThisNeeded = true;
         }
         return wasThisNeeded; // for the variable change in void display()
@@ -118,7 +136,7 @@ class gameoflife
                 }
                 System.out.println();
             }          
-            Thread.sleep(105); // 105 ms
+            Thread.sleep(110); // 110 ms
         } while(change); // if the last step is the same as the current step, then the code will end
     }
 }
