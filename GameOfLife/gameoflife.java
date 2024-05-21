@@ -27,6 +27,13 @@ class gameoflife
         System.out.print(".");
         Thread.sleep(1000);
     }
+    
+		 // Clears the screen
+    public void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
     // the main part of the code: can a block(ides, jdes) be given life?
     boolean breedable(int ides, int jdes)
     {
