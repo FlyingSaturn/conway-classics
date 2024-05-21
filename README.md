@@ -20,4 +20,6 @@ Both of these have been implemented for BlueJ, so you may request to change the 
 
 Try to make it CLI-suited. For example, as I was saying, '\f' should be replaced with '\b' or something else, which is suitable for CLI universally. The reason I'm not doing this is that it will make the program very less efficient. 
 
-The Java Classes in question: Calendar, GameOfLife
+I did the same with gameoflife, check the latest commit on the master branch.
+
+The Java Class in question: Calendar
