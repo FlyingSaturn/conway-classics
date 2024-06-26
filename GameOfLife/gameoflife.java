@@ -28,7 +28,7 @@ public class gameoflife // you may need to omit the public keyword while executi
     void initialize() throws InterruptedException
     {
         clearScreen(); // clearing the screen
-        double randomizer = 0.5 / ((2 / 3.0) / 15 * A.length); // 2/3 = 0.6666...
+        double randomizer = 0.5 / ((2 / 3.0) * A.length / 15); // 2/3 = 0.6666...
              // For subscript 15, 0.75 * the pseudorandom number had to yield 
              // something greater than or equals 0.5 to be rounded off as 1.
              // Something above 66.666th percentile on the number line...
@@ -36,7 +36,10 @@ public class gameoflife // you may need to omit the public keyword while executi
         {
             for (int j = 0; j < A[0].length; j++)
             {
-                if (Math.round(Math.random() * randomizer) == 1) // .75 was just an arbitrary number to empty the space a bit
+                // With bigger indexes, randomizer was going downwards to capture the 66% of the blocks.
+                // As it was being lower, it just makes sense to keep it as the denominator
+                // because lower the randomizer, higher the value's chance to be >0.5, so higher chance to round off to 1.
+                if (Math.round(Math.random() / randomizer) == 1) // .75 was just an arbitrary number to empty the space a bit
                     A[i][j] = BLACK;
                 else
                     A[i][j] = WHITE;
